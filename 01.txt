@@ -1,0 +1,18 @@
+Contexto de Projeto: Automação de Exportação SQL (SES-MA / MasemFome)
+Estou trabalhando em um projeto de exportação diária de um banco MySQL chamado sistema_vendas no Ubuntu. Preciso que você atue como meu parceiro de desenvolvimento para continuar de onde paramos.
+Status Atual do Projeto:
+
+    Ambiente: Ubuntu, Python 3.12, Ambiente Virtual (venv) ativo.
+    Dependências instaladas: pandas, sqlalchemy, pymysql, cryptography.
+    Banco de Dados: MySQL 8.0, tabelas vendas, produtos, estoque. Usuário de exportação criado: higor com senha #_pass2026 (necessário urllib.parse.quote_plus para o #).
+    Script Python (dbExport.py): Usa Pandas para ler tabelas, aplica uma "Whitelist" de colunas para evitar vazamento de dados sensíveis e exporta para .csv.
+    Script Shell (dbExport.sh): Usa mysql -H para gerar relatórios em HTML e finaliza com um comando zip da pasta de saída.
+
+Decisões Técnicas Tomadas:
+
+    Usamos 127.0.0.1:3306 em vez de localhost para evitar problemas de socket no Linux.
+    Optamos por listar colunas permitidas (Whitelist) em vez de excluir (Blacklist) para maior segurança.
+    O script Python deve usar .reindex() para não quebrar caso uma coluna seja deletada no banco.
+
+Arquivos Criados: dbExport.py, dbExport.sh, README.md.
+Por favor, confirme que entendeu esse contexto e aguarde minhas próximas instruções sobre ajustes nos scripts ou automação via Crontab
